@@ -112,10 +112,8 @@ spec:
     namespace: rebios-spark
   capacity:
     storage: 10M
-    accessModes:
+  accessModes:
     - ReadWriteMany
   hostPath:
     path: /mnt/d/data/spark/master/scripts
-
-      
-
+---
