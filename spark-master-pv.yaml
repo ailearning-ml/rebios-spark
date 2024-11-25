@@ -15,7 +15,7 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: /data/spark/master/apps
+    path: ../data/spark/master/apps
 ---
 
 apiVersion: v1
@@ -35,7 +35,7 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: /data/spark/master/data
+    path: ../data/spark/master/data
 ---
 
 apiVersion: v1
@@ -55,7 +55,7 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: /data/spark/master/logs
+    path: ../data/spark/master/logs
 ---
 
 apiVersion: v1
@@ -75,7 +75,7 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: /data/spark/master/spark-events
+    path: ../data/spark/master/spark-events
 ---
 
 apiVersion: v1
@@ -95,7 +95,7 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: /data/spark/etl-rebios
+    path: ../data/spark/master/etl-rebios
 ---
 
 apiVersion: v1
@@ -111,11 +111,11 @@ spec:
     name: spark-master-volume-claim-5
     namespace: rebios-spark
   capacity:
-    storage: 1.5Gi
+    storage: 10M
     accessModes:
     - ReadWriteMany
   hostPath:
-    path: /data/spark/scripts
+    path: ../data/spark/master/scripts
 
       
 
