@@ -1,0 +1,113 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: spark-master-volume-claim-0
+  labels:
+    app: spark-master
+spec:
+  storageClassName: manual
+  volumeName: spark-master-volume-0
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 50M
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: spark-master-volume-claim-1
+  labels:
+    app: spark-master
+spec:
+  storageClassName: manual
+  volumeName: spark-master-volume-1  
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10M
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: spark-master-volume-claim-2
+  labels:
+    app: spark-master
+spec:
+  storageClassName: manual
+  volumeName: spark-master-volume-2
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10M
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: spark-master-volume-claim-3
+  labels:
+    app: spark-master
+spec:
+  storageClassName: manual
+  volumeName: spark-master-volume-3
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 20M
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: spark-master-volume-claim-4
+  labels:
+    app: spark-master
+spec:
+  storageClassName: manual
+  volumeName: spark-master-volume-4
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10M
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: spark-master-volume-claim-5
+  labels:
+    app: spark-master
+spec:
+  storageClassName: manual
+  volumeName: spark-master-volume-5
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1.5Gi
+      
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: spark-master-volume-claim-6
+  labels:
+    app: spark-master
+spec:
+  storageClassName: manual
+  volumeName: spark-master-volume-6
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10M
+      
+
+
+

@@ -1,0 +1,119 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: spark-worker-a-volume-0
+  labels:
+    type: local
+    app: spark-worker-a
+spec:
+  storageClassName: manual
+  claimRef:
+    name: spark-worker-a-volume-claim-0
+    namespace: rebios-spark
+  capacity:
+    storage: 10M
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: /data/spark/worker-a/apps
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: spark-worker-a-volume-1
+  labels:
+    type: local
+    app: spark-worker-a
+spec:
+  storageClassName: manual
+  claimRef: 
+    name: spark-worker-a-volume-claim-1
+    namespace: rebios-spark
+  capacity:
+    storage: 10M
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: /data/spark/worker-a/data
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: spark-worker-a-volume-2
+  labels:
+    type: local
+    app: spark-worker-a
+spec:
+  storageClassName: manual
+  claimRef:
+    name: spark-worker-a-volume-claim-2
+    namespace: rebios-spark
+  capacity:
+    storage: 10M
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: /data/spark/worker-a/logs
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: spark-worker-a-volume-3
+  labels:
+    type: local
+    app: spark-worker-a
+spec:
+  storageClassName: manual
+  claimRef:
+    name: spark-worker-a-volume-claim-3
+    namespace: rebios-spark
+  capacity:
+    storage: 10M
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: /data/spark/worker-a/spark-events
+---
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: spark-worker-a-volume-4
+  labels:
+    type: local
+    app: spark-worker-a
+spec:
+  storageClassName: manual
+  claimRef:
+    name: spark-worker-a-volume-claim-4
+    namespace: rebios-spark
+  capacity:
+    storage: 1.5Gi
+    accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: /data/worker-a/jars
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: spark-worker-a-volume-5
+  labels:
+    type: local
+    app: spark-worker-a
+spec:
+  storageClassName: manual
+  claimRef:
+    name: spark-worker-a-volume-claim-5
+    namespace: rebios-spark
+  capacity:
+    storage: 10M
+    accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: /data/worker-a/scripts
+    
+
