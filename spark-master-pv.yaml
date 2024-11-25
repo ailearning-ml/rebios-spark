@@ -15,7 +15,7 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: ../data/spark/master/apps
+    path: /mnt/d/data/spark/master/apps
 ---
 
 apiVersion: v1
@@ -35,7 +35,7 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: ../data/spark/master/data
+    path: /mnt/d/data/spark/master/data
 ---
 
 apiVersion: v1
@@ -55,7 +55,7 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: ../data/spark/master/logs
+    path: /mnt/d/data/spark/master/logs
 ---
 
 apiVersion: v1
@@ -75,7 +75,7 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: ../data/spark/master/spark-events
+    path: /mnt/d/data/spark/master/spark-events
 ---
 
 apiVersion: v1
@@ -95,7 +95,7 @@ spec:
   accessModes:
     - ReadWriteMany
   hostPath:
-    path: ../data/spark/master/etl-rebios
+    path: /mnt/d/data/spark/master/etl-rebios
 ---
 
 apiVersion: v1
@@ -115,7 +115,7 @@ spec:
     accessModes:
     - ReadWriteMany
   hostPath:
-    path: ../data/spark/master/scripts
+    path: /mnt/d/data/spark/master/scripts
 
       
 
