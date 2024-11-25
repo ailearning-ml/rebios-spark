@@ -96,6 +96,7 @@ spec:
     - ReadWriteMany
   hostPath:
     path: /data/spark/etl-rebios
+---
 
 apiVersion: v1
 kind: PersistentVolume
@@ -114,28 +115,7 @@ spec:
     accessModes:
     - ReadWriteMany
   hostPath:
-    path: /data/spark/jars
-
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: spark-master-volume-6
-  labels:
-    type: local
-    app: spark-master
-spec:
-  storageClassName: manual
-  claimRef:
-    name: spark-master-volume-claim-6
-    namespace: rebios-spark
-  capacity:
-    storage: 10M
-    accessModes:
-    - ReadWriteMany
-  hostPath:
     path: /data/spark/scripts
-    
-    
 
       
 

@@ -91,29 +91,9 @@ spec:
     name: spark-worker-b-volume-claim-4
     namespace: rebios-spark
   capacity:
-    storage: 1.5Gi
-    accessModes:
-    - ReadWriteMany
-  hostPath:
-    path: /data/worker-b/jars
-
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: spark-worker-b-volume-5
-  labels:
-    type: local
-    app: spark-worker-b
-spec:
-  storageClassName: manual
-  claimRef:
-    name: spark-worker-b-volume-claim-5
-    namespace: rebios-spark
-  capacity:
     storage: 10M
     accessModes:
     - ReadWriteMany
   hostPath:
     path: /data/worker-b/scripts
-    
 

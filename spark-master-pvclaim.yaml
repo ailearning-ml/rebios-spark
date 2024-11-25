@@ -77,6 +77,7 @@ spec:
   resources:
     requests:
       storage: 10M
+---
 
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -91,23 +92,5 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 1.5Gi
-      
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: spark-master-volume-claim-6
-  labels:
-    app: spark-master
-spec:
-  storageClassName: manual
-  volumeName: spark-master-volume-6
-  accessModes:
-    - ReadWriteMany
-  resources:
-    requests:
       storage: 10M
       
-
-
-

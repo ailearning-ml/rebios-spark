@@ -62,6 +62,7 @@ spec:
     requests:
       storage: 10M
 ---
+
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -75,23 +76,4 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 1.5Gi
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: spark-worker-a-volume-claim-5
-  labels:
-    app: spark-worker-b
-spec:
-  storageClassName: manual
-  volumeName: spark-worker-b-volume-5
-  accessModes:
-    - ReadWriteMany
-  resources:
-    requests:
       storage: 10M
----
-
-
-
