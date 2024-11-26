@@ -1,0 +1,71 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: spark-master
+  namespace: rebios-spark
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: spark-master
+  template:
+    metadata:
+      labels:
+        component: spark-master
+    spec:
+      containers:
+        - name: spark-master
+          image: tabulario/spark-iceberg
+          envFrom:
+            - configMapRef:
+                name: rebios-spark-master-secret
+          resources:
+            requests:
+              memory: "2Gi"
+            limits:
+              memory: "6Gi"
+          command:
+          - /bin/sh
+          - -c
+          - |
+            tail -f /dev/null
+          ports:
+            - containerPort: 7077
+            - containerPort: 8080
+          volumeMounts:
+            - mountPath: /opt/spark-apps
+              name: spark-apps
+            - mountPath: /opt/spark-data
+              name: spark-data
+            - mountPath: /opt/spark/logs
+              name: spark-logs
+            - mountPath: /workspace/spark-events
+              name: spark-events
+            - mountPath: /home/etl-rebios
+              name: spark-etl-rebios
+            - mountPath: /opt/spark/scripts
+              name: spark-scripts
+      volumes:
+        - name: spark-apps
+          persistentVolumeClaim:
+            claimName: spark-master-volume-claim-0
+        - name: spark-data
+          persistentVolumeClaim:
+            claimName: spark-master-volume-claim-1
+        - name: spark-logs
+          persistentVolumeClaim:
+            claimName: spark-master-volume-claim-2
+        - name: spark-events
+          persistentVolumeClaim:
+            claimName: spark-master-volume-claim-3
+        - name: spark-etl-rebios
+          persistentVolumeClaim:
+            claimName: spark-master-volume-claim-4
+        - name: spark-scripts
+          persistentVolumeClaim:
+            claimName: spark-master-volume-claim-5
+
+
+          # resources:
+          #   requests:
+          #     cpu: 100m
